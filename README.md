@@ -40,5 +40,7 @@ class SomeDisposable extends DisposableCollector {
 
 And you can make ```Disposable``` from any of your objects with factory
 ```dart
-final disposable = new Disposable(() => yourObject.close());
+final disposable = Disposable.create(yourObject, () => yourObject.close());
+// or
+final disposable = yourObject.toDisposable(() => yourObjectClose());
 ```

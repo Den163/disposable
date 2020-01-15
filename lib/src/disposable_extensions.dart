@@ -4,17 +4,17 @@ import 'package:disposable_utils/src/disposable.dart';
 import 'package:disposable_utils/src/disposable_collector.dart';
 
 extension StreamControllerExtensions<T> on StreamController<T> {
-  Disposable toDisposable() => Disposable.create(this, () => this.close());
+  Disposable asDisposable() => Disposable.create(this, (s) => s.close());
 
   void addTo(DisposableCollector disposableCollection) =>
-    this.toDisposable().addTo(disposableCollection);
+    this.asDisposable().addTo(disposableCollection);
 }
 
 extension StreamSubscriptionExtensions<T> on StreamSubscription<T> {
-  Disposable toDisposable() => Disposable.create(this, () => this.cancel());
+  Disposable asDisposable() => Disposable.create(this, (s) => s.cancel());
 
   void addTo(DisposableCollector disposableCollection) =>
-    this.toDisposable().addTo(disposableCollection);
+    this.asDisposable().addTo(disposableCollection);
 }
 
 extension DisposableExtensions on Disposable {
@@ -22,7 +22,7 @@ extension DisposableExtensions on Disposable {
     disposableCollector.add(this);
 }
 
-extension ObjectExtensions on Object {
-  Disposable toDisposable(void Function() dispose) =>
+extension ObjectExtensions<T> on T {
+  Disposable toDisposable (void Function(T) dispose) =>
     Disposable.create(this, dispose);
 }

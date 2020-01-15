@@ -1,6 +1,6 @@
 /// Interface for objects you can dispose
 abstract class Disposable {
-  static Disposable create<T> (T disposable, Function() dispose) =>
+  static Disposable create<T> (T disposable, Function(T) dispose) =>
     _DisposableImpl(disposable, dispose);
 
   void dispose();
@@ -8,7 +8,7 @@ abstract class Disposable {
 
 class _DisposableImpl<T> implements Disposable {
   T disposable;
-  void Function() _dispose;
+  void Function(T) _dispose;
 
   _DisposableImpl(this.disposable, this._dispose) :
     assert(_dispose != null);
@@ -21,5 +21,5 @@ class _DisposableImpl<T> implements Disposable {
   @override
   int get hashCode => disposable.hashCode;
 
-  @override void dispose() => _dispose();
+  @override void dispose() => _dispose(disposable);
 }

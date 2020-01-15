@@ -5,7 +5,7 @@ import 'package:mockito/mockito.dart';
 void main() {
   test('Disposable disposes the value', () {
     final a = BMock();
-    final d = a.toDisposable(() => a.close());
+    final d = a.toDisposable((a) => a.close());
     d.dispose();
 
     verify(a.close());
