@@ -1,6 +1,6 @@
-name: disposable
+name: disposable_utils
 description: Provides a mechanism for releasing resources and utils for Dart and Flutter
-version: 1.1.0
+version: 1.2.0
 homepage: https://github.com/Den163/disposable
 authors:
   - Den163 <abramov.denis163@gmail.com>
