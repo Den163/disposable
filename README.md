@@ -26,7 +26,7 @@ class SomeDisposable {
 }
 ```
 
-With ```DisposableCollector``` it will looks like : 
+With ```DisposableCollector``` it will look like : 
 ```dart
 class SomeDisposable extends DisposableCollector {
   /// ...
