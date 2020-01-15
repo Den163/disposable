@@ -29,7 +29,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.11"
-  disposable:
+  disposable_utils:
     dependency: "direct main"
     description:
       path: ".."

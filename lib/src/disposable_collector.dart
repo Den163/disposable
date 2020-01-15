@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:disposable/src/disposable.dart';
+import 'package:disposable_utils/src/disposable.dart';
 import 'package:meta/meta.dart';
 
 /// Base class for [Disposable]`s that contains many other [Disposable]s,

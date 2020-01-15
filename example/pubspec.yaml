@@ -10,5 +10,5 @@ dependencies:
   flutter:
     sdk: flutter
 
-  disposable:
+  disposable_utils:
     path: ./..

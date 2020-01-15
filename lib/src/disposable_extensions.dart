@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:disposable/src/disposable.dart';
-import 'package:disposable/src/disposable_collector.dart';
+import 'package:disposable_utils/src/disposable.dart';
+import 'package:disposable_utils/src/disposable_collector.dart';
 
 extension StreamControllerExtensions<T> on StreamController<T> {
   Disposable toDisposable() => Disposable(() => this.close());

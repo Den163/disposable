@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:disposable/disposable.dart';
+import 'package:disposable_utils/disposable.dart';
 
 void main() {
   final service = new DataService();
