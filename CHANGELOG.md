@@ -1,3 +1,6 @@
+##[1.3.0]
+Added null safety support. Updated tests
+
 ## [1.2.0] 
 Added equality comparison and hashcode function to disposable.
 Added toDisposable(void Function(T)) to convert from any object

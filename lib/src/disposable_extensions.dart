@@ -4,14 +4,16 @@ import 'package:disposable_utils/src/disposable.dart';
 import 'package:disposable_utils/src/disposable_collector.dart';
 
 extension StreamControllerExtensions<T> on StreamController<T> {
-  Disposable asDisposable() => Disposable.create(this, (s) => s.close());
+  Disposable asDisposable() => Disposable.create(
+      this, (StreamController<T> s) => s.close());
 
   void addTo(DisposableCollector disposableCollection) =>
     this.asDisposable().addTo(disposableCollection);
 }
 
 extension StreamSubscriptionExtensions<T> on StreamSubscription<T> {
-  Disposable asDisposable() => Disposable.create(this, (s) => s.cancel());
+  Disposable asDisposable() => Disposable.create(
+      this, (StreamSubscription<T> s) => s.cancel());
 
   void addTo(DisposableCollector disposableCollection) =>
     this.asDisposable().addTo(disposableCollection);
