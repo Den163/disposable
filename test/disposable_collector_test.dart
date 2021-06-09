@@ -1,4 +1,4 @@
-import 'package:disposable_utils/disposable.dart';
+import 'package:disposable_utils/disposable_utils.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

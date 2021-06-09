@@ -10,8 +10,7 @@ class _DisposableImpl<T> implements Disposable {
   T disposable;
   void Function(T) _dispose;
 
-  _DisposableImpl(this.disposable, this._dispose) :
-    assert(_dispose != null);
+  _DisposableImpl(this.disposable, this._dispose);
 
   @override
   bool operator ==(other) =>
